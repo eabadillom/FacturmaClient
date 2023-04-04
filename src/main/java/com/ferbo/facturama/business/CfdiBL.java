@@ -46,7 +46,7 @@ public class CfdiBL extends FacturamaBL {
         int httpStatus = -1;
         
         try {
-			sURL = basePath + "/api-lite/2/cfdis";
+			sURL = basePath + "/api-lite/3/cfdis";
 			
 			prettyGson = new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").setPrettyPrinting().create();
 			jsonRequest = prettyGson.toJson(bean);

@@ -27,3 +27,5 @@ hs_err_pid*
 .classpath
 .tern-project
 .settings/
+.project
+

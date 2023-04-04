@@ -17,6 +17,11 @@ URL: https://api.facturama.mx-->
 <Environment name="facturama/password" value="5up3r.sEcRet" type="java.lang.String"/>
 <Environment name="facturama/logo" value="http://url.to/logo.png" type="java.lang.String"/>
 
+Para poder realizar el registro de Sucursales con la API multi-emisor, se debe crear
+una instancia de la clase com.ferbo.facturama.business.CertificadosBL. Posteriormente
+se debe invocar al método registra(CFDIInfo bean) del objeto para enviar el CFDI al
+endpoint de Facturama.
+
 La documentación de Facturama está disponible públicamente en los siguientes sitios:
 
 API web
@@ -24,3 +29,10 @@ https://apisandbox.facturama.mx/Docs
 
 API Multi-emisor
 https://apisandbox.facturama.mx/Docs-multi
+
+Para la configuración del log4j2, se incluye un archivo .properties, el cual se deberá incluir directamente
+en el classpath del proyecto web.
+
+Se incluye un archivo cacerts con el certificado digital del sitio web de facturma.mx, en caso de requerirlo
+en el despliegue de proyectos web con servidores Windows. Este archivo se mantiene con la contraseña
+por defecto "changeit".
