@@ -1,11 +1,12 @@
 package com.ferbo.facturama.request;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import com.google.gson.annotations.SerializedName;
 
 /**Documentos Relacionados al Pago<br>
- * https://www.api.facturama.com.mx/docs/ResourceModel?modelName=RelatedDocument<br>
+ * <a href="https://www.api.facturama.com.mx/docs/ResourceModel?modelName=RelatedDocument">RelatedDocument</a><br>
  * @author esteban
  *
  */
@@ -60,6 +61,14 @@ public class RelatedDocument {
      */
     @SerializedName(value = "AmountPaid")
     private BigDecimal amountPaid = null;
+    
+    /**Taxes
+     * Si el atributo TaxObject tiene el valor 02, se debe incluir al menos un nodo Tax indicando el IVA.
+     * Para más información, visita el sitio
+     * <a href="https://apisandbox.facturama.mx/guias/cfdi40/complementos/complemento-pago-20">Facturama: Complemento de pago 2.0</a>
+     * */
+    @SerializedName(value = "Taxes")
+    private List<Tax> taxes = null;
 
     public String getUuid() {
         return uuid;
@@ -132,12 +141,28 @@ public class RelatedDocument {
     public void setAmountPaid(BigDecimal amountPaid) {
         this.amountPaid = amountPaid;
     }
+    
+    public List<Tax> getTaxes() {
+		return taxes;
+	}
 
-    @Override
-    public String toString() {
-        return "{\"uuid\":\"" + uuid + "\", \"serie\":\"" + serie + "\", \"folio\":\"" + folio + "\", \"currency\":\""
-                + currency + "\", \"exchangeRate\":\"" + exchangeRate + "\", \"paymentMethod\":\"" + paymentMethod
-                + "\", \"partialityNumber\":\"" + partialityNumber + "\", \"previousBalanceAmount\":\""
-                + previousBalanceAmount + "\", \"amountPaid\":\"" + amountPaid + "\"}";
-    }
+	public void setTaxes(List<Tax> taxes) {
+		this.taxes = taxes;
+	}
+
+	@Override
+	public String toString() {
+		return "{\"" + (uuid != null ? "uuid\":\"" + uuid + "\", \"" : "")
+				+ (serie != null ? "serie\":\"" + serie + "\", \"" : "")
+				+ (folio != null ? "folio\":\"" + folio + "\", \"" : "")
+				+ (currency != null ? "currency\":\"" + currency + "\", \"" : "")
+				+ (exchangeRate != null ? "exchangeRate\":\"" + exchangeRate + "\", \"" : "")
+				+ (paymentMethod != null ? "paymentMethod\":\"" + paymentMethod + "\", \"" : "")
+				+ (partialityNumber != null ? "partialityNumber\":\"" + partialityNumber + "\", \"" : "")
+				+ (previousBalanceAmount != null ? "previousBalanceAmount\":\"" + previousBalanceAmount + "\", \"" : "")
+				+ (amountPaid != null ? "amountPaid\":\"" + amountPaid + "\", \"" : "")
+				+ (taxes != null ? "taxes\":\"" + taxes : "") + "\"}";
+	}
+
+    
 }
