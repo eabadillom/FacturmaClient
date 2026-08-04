@@ -57,6 +57,16 @@ public class RelatedDocument {
     @SerializedName(value = "PreviousBalanceAmount")
     private BigDecimal previousBalanceAmount = null;
     
+    /**ImpSaldoInsoluto<br>
+     */
+    @SerializedName(value = "ImpSaldoInsoluto")
+    private BigDecimal impSaldoInsoluto;
+    
+    /**TaxObject<br>
+     */
+    @SerializedName(value = "TaxObject")
+    private String taxObject;
+    
     /**AmountPaid<br>
      */
     @SerializedName(value = "AmountPaid")
@@ -150,6 +160,22 @@ public class RelatedDocument {
 		this.taxes = taxes;
 	}
 
+    public BigDecimal getImpSaldoInsoluto() {
+        return impSaldoInsoluto;
+    }
+
+    public void setImpSaldoInsoluto(BigDecimal impSaldoInsoluto) {
+        this.impSaldoInsoluto = impSaldoInsoluto;
+    }
+
+    public String getTaxObject() {
+        return taxObject;
+    }
+
+    public void setTaxObject(String taxObject) {
+        this.taxObject = taxObject;
+    }
+
 	@Override
 	public String toString() {
 		return "{\"" + (uuid != null ? "uuid\":\"" + uuid + "\", \"" : "")
@@ -161,6 +187,8 @@ public class RelatedDocument {
 				+ (partialityNumber != null ? "partialityNumber\":\"" + partialityNumber + "\", \"" : "")
 				+ (previousBalanceAmount != null ? "previousBalanceAmount\":\"" + previousBalanceAmount + "\", \"" : "")
 				+ (amountPaid != null ? "amountPaid\":\"" + amountPaid + "\", \"" : "")
+                                + (impSaldoInsoluto != null ? "impSaldoInsoluto\":\"" + impSaldoInsoluto + "\", \"" : "" )
+                                + (taxObject != null ? "taxObject\":\"" + taxObject + "\", \"" : "")
 				+ (taxes != null ? "taxes\":\"" + taxes : "") + "\"}";
 	}
 
