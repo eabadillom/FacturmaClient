@@ -18,8 +18,9 @@ import com.google.gson.annotations.SerializedName;
  */
 public class CFDIInfo {
     
-    /**Atributo para especificar el nombre que se establecera en el pdf (default 1 = factura) [ Vea la documentación de "Nombres del CFDI" ]<br>
+    /**Atributo para especificar el nombre que se establecera en el pdf (default 1 = factura) [ Vea la documentación de "Nombres del CFDI" (https://api.facturama.mx/Catalogs/NameIds) ]<br>
      * Data type: Text
+     * Este atributo es mandatorio
      */
     @SerializedName(value = "NameId")
     private Integer nameId = null;
