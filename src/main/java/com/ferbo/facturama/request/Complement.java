@@ -1,6 +1,7 @@
 package com.ferbo.facturama.request;
 
 import com.google.gson.annotations.SerializedName;
+import java.util.List;
 
 /**Complemento del CFDI<br>
  * https://www.api.facturama.com.mx/docs/ResourceModel?modelName=Complement<br>
@@ -11,7 +12,7 @@ public class Complement {
     /**Complemento de Pago<br>
      */
     @SerializedName(value = "Payments")
-    private PaymentBindingModel Payments = null;
+    private List<PaymentBindingModel> Payments = null;
     
     /**Complemento Detallista<br>
      * 
@@ -39,4 +40,53 @@ public class Complement {
      */
     @SerializedName(value = "CartaPorte20")
     private ComplementoCartaPorte20 CartaPorte20 = null;
+
+    public List<PaymentBindingModel> getPayments() {
+        return Payments;
+    }
+
+    public void setPayments(List<PaymentBindingModel> Payments) {
+        this.Payments = Payments;
+    }
+
+    public Donat getDonation() {
+        return Donation;
+    }
+
+    public void setDonation(Donat Donation) {
+        this.Donation = Donation;
+    }
+
+    public ForeignTrade getForeignTrade() {
+        return ForeignTrade;
+    }
+
+    public void setForeignTrade(ForeignTrade ForeignTrade) {
+        this.ForeignTrade = ForeignTrade;
+    }
+
+    public Payroll getPayroll() {
+        return Payroll;
+    }
+
+    public void setPayroll(Payroll Payroll) {
+        this.Payroll = Payroll;
+    }
+
+    public TaxLegends getTaxLegends() {
+        return TaxLegends;
+    }
+
+    public void setTaxLegends(TaxLegends TaxLegends) {
+        this.TaxLegends = TaxLegends;
+    }
+
+    public ComplementoCartaPorte20 getCartaPorte20() {
+        return CartaPorte20;
+    }
+
+    public void setCartaPorte20(ComplementoCartaPorte20 CartaPorte20) {
+        this.CartaPorte20 = CartaPorte20;
+    }
+    
 }
